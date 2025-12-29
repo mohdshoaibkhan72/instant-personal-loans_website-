@@ -34,13 +34,13 @@ export const FinalCTA: React.FC = () => {
                 RBI Registered Partners
               </div>
               
-              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-8 leading-[1.1]">
-                Get up to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">₹10 Lakhs</span> <br/>
-                in your bank, instantly.
+              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6 leading-[1.1]">
+                Ready for Financial Freedom? <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Get Approved Instantly.</span>
               </h2>
               
               <p className="text-lg leading-relaxed text-gray-300 mb-10 font-medium max-w-2xl mx-auto">
-                No branch visits. No physical documents. Just a secure, 100% digital process trusted by over 10,000 Indians.
+                Join 10,000+ Indians who trust Rupivo for their financial needs. Zero paperwork, instant approval, and complete peace of mind.
               </p>
 
               {/* Benefits Pills */}
@@ -52,25 +52,27 @@ export const FinalCTA: React.FC = () => {
                  ))}
               </div>
 
-              {/* Primary Actions */}
+              {/* Primary Actions - High Visibility Store Badges */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full mb-12">
                   {/* Android Button */}
-                  <button className="group flex items-center justify-start gap-4 bg-white text-rupivo-dark hover:bg-gray-50 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)] hover:shadow-[0_25px_50px_-12px_rgba(255,255,255,0.3)] min-w-[240px] w-full sm:w-auto border-2 border-transparent">
-                     <div className="group-hover:scale-110 transition-transform duration-300 text-rupivo-blue">
+                  <button className="group flex items-center justify-start gap-4 bg-white text-rupivo-dark hover:bg-gray-50 px-6 py-3.5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)] hover:shadow-[0_25px_50px_-12px_rgba(255,255,255,0.3)] min-w-[240px] w-full sm:w-auto border-2 border-transparent relative overflow-hidden">
+                     <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                     <div className="group-hover:scale-110 transition-transform duration-300 text-rupivo-dark relative z-10">
                         <PlayStoreIcon />
                      </div>
-                     <div className="text-left">
-                        <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-rupivo-blue transition-colors">Download on</div>
-                        <div className="text-2xl font-extrabold leading-none font-sans mt-0.5">Google Play</div>
+                     <div className="text-left relative z-10">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 group-hover:text-rupivo-blue transition-colors">Get it on</div>
+                        <div className="text-2xl font-extrabold leading-none font-sans mt-0.5 text-gray-900">Google Play</div>
                      </div>
                   </button>
 
                    {/* iOS Button */}
-                   <button className="group flex items-center justify-start gap-4 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg min-w-[240px] w-full sm:w-auto">
-                     <div className="group-hover:scale-110 transition-transform duration-300">
+                   <button className="group flex items-center justify-start gap-4 bg-black border border-white/20 text-white hover:bg-gray-900 px-6 py-3.5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-black/30 min-w-[240px] w-full sm:w-auto relative overflow-hidden">
+                     <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                     <div className="group-hover:scale-110 transition-transform duration-300 relative z-10">
                         <AppleIcon />
                      </div>
-                     <div className="text-left">
+                     <div className="text-left relative z-10">
                         <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors">Download on the</div>
                         <div className="text-2xl font-extrabold leading-none font-sans mt-0.5">App Store</div>
                      </div>

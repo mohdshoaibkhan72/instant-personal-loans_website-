@@ -1,7 +1,11 @@
 import React from 'react';
 import { PageLayout } from '../PageLayout';
-import { Target, Users, TrendingUp, ArrowRight, Heart, Shield, Zap, Rocket, Globe, Coffee, Smile, Award, History, Newspaper, Linkedin, MapPin } from 'lucide-react';
+import { 
+  Target, Users, TrendingUp, ArrowRight, Heart, Shield, Zap, Rocket, Globe, Coffee, Smile, Award, History, Newspaper, Linkedin, MapPin,
+  Clock, PlayCircle, BookOpen, Hash, ChevronRight, Bookmark, Search, Share2, MailOpen, CheckCircle2, Quote
+} from 'lucide-react';
 import { Button } from '../Button';
+import { ButtonVariant } from '../../types';
 
 // --- ABOUT US ---
 export const AboutUs: React.FC = () => (
@@ -16,7 +20,7 @@ export const AboutUs: React.FC = () => (
         <div className="w-24 h-1 bg-rupivo-blue mx-auto rounded-full"></div>
       </section>
 
-      {/* Section 2: Our Journey (Timeline) - NEW */}
+      {/* Section 2: Our Journey (Timeline) */}
       <section>
         <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-rupivo-dark flex items-center justify-center gap-2">
@@ -45,7 +49,7 @@ export const AboutUs: React.FC = () => (
         </div>
       </section>
 
-      {/* Section 3: Leadership Team - NEW */}
+      {/* Section 3: Leadership Team */}
       <section>
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-rupivo-dark">Meet the Leadership</h3>
@@ -104,7 +108,7 @@ export const AboutUs: React.FC = () => (
         </div>
       </section>
 
-      {/* Section 5: Press Mentions - NEW */}
+      {/* Section 5: Press Mentions */}
       <section className="text-center">
           <h3 className="text-xl font-bold text-gray-400 uppercase tracking-widest mb-10 flex items-center justify-center gap-2">
               <Newspaper size={20} /> Featured In
@@ -134,7 +138,7 @@ export const Careers: React.FC = () => (
          </p>
       </section>
       
-      {/* Section 2: Life at Rupivo (Gallery) - NEW */}
+      {/* Section 2: Life at Rupivo (Gallery) */}
       <section>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-96">
               <div className="col-span-2 row-span-2 rounded-3xl overflow-hidden relative group">
@@ -185,7 +189,7 @@ export const Careers: React.FC = () => (
         </div>
       </section>
 
-      {/* Section 4: Employee Testimonial - NEW */}
+      {/* Section 4: Employee Testimonial */}
       <section className="max-w-4xl mx-auto">
           <div className="bg-rupivo-dark text-white rounded-3xl p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
@@ -271,91 +275,253 @@ export const Careers: React.FC = () => (
 
 // --- BLOG ---
 export const Blog: React.FC = () => (
-  <PageLayout title="Rupivo Blog" subtitle="Financial tips, product updates, and industry insights.">
-    <div className="space-y-16">
+  <PageLayout title="The Rupivo Journal" subtitle="Insights, guides, and stories for your financial journey.">
+    <div className="space-y-24">
        
-       {/* Section 1: Featured Post */}
-       <section className="relative rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-xl">
-           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+       {/* Section 1: Hero Featured Post */}
+       <section className="relative rounded-[3rem] overflow-hidden group cursor-pointer shadow-2xl h-[650px]">
            <img 
-             src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" 
+             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" 
              alt="Featured" 
-             className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
+             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
            />
-           <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 text-white max-w-3xl">
-               <span className="bg-rupivo-blue px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider mb-4 inline-block">Editor's Pick</span>
-               <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Mastering Your Credit Score: The Ultimate Guide for 2024</h2>
-               <p className="text-gray-200 mb-6 line-clamp-2 text-lg">Understanding your CIBIL score is the first step to financial freedom. Learn actionable tips to improve it within 6 months without paying agents.</p>
-               <div className="flex items-center gap-4 text-sm font-medium">
-                   <div className="flex items-center gap-2">
-                       <div className="w-8 h-8 rounded-full bg-white/20"></div>
-                       <span>By Rishi Mehta</span>
+           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+           <div className="absolute bottom-0 left-0 p-8 md:p-16 w-full md:w-3/4 text-white">
+               <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
+                   <span className="bg-rupivo-blue px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg shadow-rupivo-blue/20">Cover Story</span>
+                   <span className="flex items-center gap-1.5 text-sm font-medium text-gray-300 bg-black/20 backdrop-blur-md px-3 py-1 rounded-full"><Clock size={14}/> 8 min read</span>
+               </div>
+               <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-sm">The Future of Lending is Here: Why AI is Your New Banker</h2>
+               <p className="text-gray-200 mb-8 text-lg leading-relaxed line-clamp-2 opacity-90 max-w-2xl">
+                 Traditional credit scores are outdated. Discover how Rupivo's new AI model uses alternative data to approve loans for the unbanked, ensuring fairness and inclusion for millions of Indians.
+               </p>
+               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                   <Button className="bg-white text-rupivo-dark hover:bg-blue-50 border-0 rounded-full px-8 py-4 h-auto text-base font-bold shadow-lg shadow-white/10" icon={<BookOpen size={20}/>}>
+                       Start Reading
+                   </Button>
+                   <div className="flex items-center gap-3">
+                       <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun" alt="Author" className="w-12 h-12 rounded-full border-2 border-white/20" />
+                       <div>
+                           <p className="text-sm font-bold">Arjun Malhotra</p>
+                           <p className="text-xs text-gray-400">CEO & Co-Founder</p>
+                       </div>
                    </div>
-                   <span className="w-1 h-1 bg-white rounded-full"></span>
-                   <span>5 min read</span>
                </div>
            </div>
        </section>
 
-       {/* Section 2: Trending Topics - NEW */}
+       {/* Section 2: Trending Topics / Navigation */}
        <section>
-           <h4 className="font-bold text-gray-500 uppercase tracking-widest text-xs mb-4">Trending Topics</h4>
+           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+               <h3 className="text-2xl font-bold text-rupivo-dark flex items-center gap-2">
+                   <Hash className="text-rupivo-blue" /> Trending Topics
+               </h3>
+               <div className="relative w-full md:w-64 mt-4 md:mt-0">
+                   <input type="text" placeholder="Search articles..." className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-rupivo-blue/20 outline-none text-sm" />
+                   <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+               </div>
+           </div>
            <div className="flex flex-wrap gap-3">
-               {["All", "Credit Education", "Personal Finance", "Product Updates", "Security", "Success Stories", "Fraud Prevention", "Investment 101"].map((cat, i) => (
-                   <button key={i} className={`px-5 py-2.5 rounded-xl text-sm font-bold border transition-all ${i===0 ? 'bg-rupivo-dark text-white border-rupivo-dark' : 'bg-white text-gray-600 border-gray-200 hover:border-rupivo-dark hover:text-rupivo-dark hover:shadow-sm'}`}>
+               {["All", "Credit Score 101", "Personal Finance", "Fraud Prevention", "Success Stories", "Rupivo Updates", "Regulatory News", "Lifestyle"].map((cat, i) => (
+                   <button key={i} className={`px-6 py-3 rounded-2xl text-sm font-bold border transition-all hover:-translate-y-0.5 ${i===0 ? 'bg-rupivo-dark text-white border-rupivo-dark shadow-lg shadow-gray-900/20' : 'bg-white text-gray-600 border-gray-200 hover:border-rupivo-blue hover:text-rupivo-blue hover:shadow-md'}`}>
                        {cat}
                    </button>
                ))}
            </div>
        </section>
 
-       {/* Section 3: Recent Posts */}
+       {/* Section 3: FinShorts (Quick Reads) - Horizontal Scroll */}
        <section>
-        <h3 className="text-2xl font-bold text-rupivo-dark mb-8">Recent Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {[
-            { title: "5 Tips to Improve Your CIBIL Score Fast", date: "March 15, 2024", cat: "Credit Education", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" },
-            { title: "Personal Loan vs. Credit Card: Which is Better?", date: "March 10, 2024", cat: "Finance 101", img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" },
-            { title: "How to Avoid Instant Loan Frauds in India", date: "Feb 28, 2024", cat: "Security", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" },
-            { title: "Introducing Rupivo 2.0: Faster & Smarter", date: "Feb 14, 2024", cat: "Product Update", img: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=600&q=80" },
-        ].map((post, idx) => (
-            <div key={idx} className="group bg-white border border-gray-200 rounded-[2rem] overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 cursor-pointer flex flex-col h-full hover:-translate-y-1">
-                <div className="h-60 overflow-hidden relative">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wide text-rupivo-dark">
-                        {post.cat}
-                    </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs text-gray-400 font-medium">{post.date}</span>
-                </div>
-                <h3 className="text-xl font-bold text-rupivo-dark mb-3 group-hover:text-rupivo-blue transition-colors leading-snug">{post.title}</h3>
-                <div className="mt-auto pt-4 flex items-center text-rupivo-blue font-bold text-sm">
-                    Read Article <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-                </div>
-            </div>
-        ))}
-        </div>
+           <div className="flex items-center justify-between mb-8">
+               <div>
+                   <h3 className="text-2xl font-bold text-rupivo-dark flex items-center gap-2"><Zap className="text-yellow-500 fill-yellow-500" /> FinShorts</h3>
+                   <p className="text-gray-500 text-sm">Bite-sized financial updates. 1 minute reads.</p>
+               </div>
+               <div className="flex gap-2">
+                   <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50"><ArrowRight size={20} className="rotate-180" /></button>
+                   <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50"><ArrowRight size={20} /></button>
+               </div>
+           </div>
+           
+           <div className="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
+               {[
+                   { title: "RBI repo rate remains unchanged at 6.5%", tag: "News", color: "blue" },
+                   { title: "5 ways to save tax before March 31st", tag: "Tips", color: "green" },
+                   { title: "UPI transactions hit new record in Feb", tag: "Market", color: "purple" },
+                   { title: "Gold prices see a slight dip this week", tag: "Commodities", color: "yellow" },
+                   { title: "New credit card rules effective from April", tag: "Regulations", color: "red" }
+               ].map((item, i) => (
+                   <div key={i} className="min-w-[280px] p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer snap-start flex flex-col justify-between h-48 group">
+                       <div>
+                           <span className={`px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-${item.color}-50 text-${item.color}-600 mb-3 inline-block`}>{item.tag}</span>
+                           <h4 className="font-bold text-lg text-rupivo-dark group-hover:text-rupivo-blue transition-colors leading-tight">{item.title}</h4>
+                       </div>
+                       <div className="flex items-center justify-between text-xs text-gray-400 font-medium">
+                           <span>Today</span>
+                           <span className="flex items-center gap-1"><Clock size={12}/> 1 min</span>
+                       </div>
+                   </div>
+               ))}
+           </div>
        </section>
 
-       {/* Section 4: Newsletter */}
-       <section className="bg-rupivo-dark rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-96 h-96 bg-rupivo-blue/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
-           <div className="absolute bottom-0 left-0 w-64 h-64 bg-rupivo-green/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
-           
+       {/* Section 4: Editor's Picks (Grid) */}
+       <section>
+           <h3 className="text-2xl font-bold text-rupivo-dark mb-8 flex items-center gap-2"><Award className="text-rupivo-blue" /> Editor's Picks</h3>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+               {[
+                   { title: "The Ultimate Guide to improving CIBIL Score", desc: "Went from 650 to 800 in 6 months? Here is the exact strategy used by our financial experts.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" },
+                   { title: "Debt Consolidation: Is it right for you?", desc: "Managing multiple EMIs can be stressful. Learn how a consolidation loan can save you interest and money.", img: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=800&q=80" }
+               ].map((post, i) => (
+                   <div key={i} className="group cursor-pointer">
+                       <div className="overflow-hidden rounded-[2rem] mb-6 h-64 shadow-md relative">
+                           <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                       </div>
+                       <h4 className="text-2xl font-bold text-rupivo-dark mb-3 group-hover:text-rupivo-blue transition-colors">{post.title}</h4>
+                       <p className="text-gray-600 leading-relaxed mb-4">{post.desc}</p>
+                       <div className="inline-flex items-center gap-2 text-rupivo-blue font-bold text-sm bg-blue-50/50 px-4 py-2 rounded-full group-hover:bg-rupivo-blue group-hover:text-white transition-all">
+                           Read Article <ArrowRight size={16}/>
+                       </div>
+                   </div>
+               ))}
+           </div>
+       </section>
+
+       {/* Section 5: Deep Dives (Long List) */}
+       <section className="bg-gray-50 rounded-[3rem] p-8 md:p-12">
+           <h3 className="text-2xl font-bold text-rupivo-dark mb-10">Deep Dives</h3>
+           <div className="space-y-8">
+               {[
+                   { title: "Understanding the Psychology of Money", date: "Mar 15", cat: "Psychology", read: "12 min" },
+                   { title: "How inflation is silently eating your savings", date: "Mar 12", cat: "Economics", read: "10 min" },
+                   { title: "The complete checklist before taking a Personal Loan", date: "Mar 08", cat: "Guide", read: "15 min" }
+               ].map((item, i) => (
+                   <div key={i} className="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 hover:border-rupivo-blue/30 transition-all flex flex-col md:flex-row gap-8 items-center group cursor-pointer shadow-sm hover:shadow-lg">
+                       <div className="w-full md:w-48 h-32 bg-gray-200 rounded-2xl overflow-hidden shrink-0">
+                           <img src={`https://images.unsplash.com/photo-${i === 0 ? '1579621970563-ebec7560ff3e' : i === 1 ? '1611974765270-ca1258047490' : '1554224155-8d04cb21cd6c'}?auto=format&fit=crop&w=400&q=80`} alt="Thumbnail" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                       </div>
+                       <div className="flex-1">
+                           <div className="flex gap-3 mb-2">
+                               <span className="bg-blue-50 text-rupivo-blue px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">{item.cat}</span>
+                               <span className="text-gray-400 text-xs font-bold flex items-center gap-1"><Clock size={12} /> {item.read}</span>
+                           </div>
+                           <h4 className="text-xl font-bold text-rupivo-dark mb-2 group-hover:text-rupivo-blue transition-colors">{item.title}</h4>
+                           <p className="text-gray-500 text-sm line-clamp-2">An in-depth look at how financial decisions are driven more by emotions than logic, and what you can do about it.</p>
+                       </div>
+                       <div className="hidden md:block">
+                           <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-rupivo-blue group-hover:text-white group-hover:border-rupivo-blue transition-all">
+                               <ArrowRight size={20} />
+                           </div>
+                       </div>
+                   </div>
+               ))}
+           </div>
+           <div className="text-center mt-10">
+               <Button variant={ButtonVariant.OUTLINE} className="px-8 border-gray-300">Load More Articles</Button>
+           </div>
+       </section>
+
+       {/* Section 6: Video Section */}
+       <section className="bg-rupivo-dark rounded-[3rem] p-8 md:p-16 text-white overflow-hidden relative">
+           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rupivo-blue/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
            <div className="relative z-10">
-               <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg backdrop-blur text-yellow-400">
-                   <Zap size={32} />
+               <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                   <div>
+                       <h3 className="text-3xl font-bold mb-2 flex items-center gap-3"><PlayCircle className="text-red-500" size={32} /> Watch & Learn</h3>
+                       <p className="text-gray-400">Complex financial concepts explained simply.</p>
+                   </div>
+                   <Button variant={ButtonVariant.OUTLINE} className="border-white/20 text-white hover:bg-white hover:text-rupivo-dark">Visit YouTube Channel</Button>
                </div>
-               <h3 className="text-3xl font-bold mb-4">Get Smarter About Money</h3>
-               <p className="text-gray-300 mb-8 max-w-lg mx-auto">Join 50,000+ subscribers. Get weekly financial tips and exclusive offers directly in your inbox.</p>
-               <form className="max-w-md mx-auto flex gap-3" onSubmit={(e) => e.preventDefault()}>
-                   <input type="email" placeholder="Enter your email" className="flex-1 px-5 py-4 rounded-xl border border-white/10 bg-white/5 focus:bg-white focus:text-rupivo-dark outline-none transition-colors" />
-                   <Button className="rounded-xl whitespace-nowrap bg-rupivo-blue text-white hover:bg-white hover:text-rupivo-blue">Subscribe</Button>
+               
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                   {[
+                       { title: "What is APR?", dur: "2:30" },
+                       { title: "How to apply for a loan?", dur: "3:45" },
+                       { title: "Customer Success Story", dur: "1:15" }
+                   ].map((vid, i) => (
+                       <div key={i} className="group cursor-pointer">
+                           <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-800 mb-4 border border-white/10 shadow-lg">
+                               <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+                                   <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                                       <PlayCircle size={32} className="text-white fill-white" />
+                                   </div>
+                               </div>
+                               <span className="absolute bottom-2 right-2 bg-black/80 px-2 py-0.5 rounded text-xs font-bold">{vid.dur}</span>
+                           </div>
+                           <h4 className="font-bold text-lg group-hover:text-rupivo-blue transition-colors">{vid.title}</h4>
+                       </div>
+                   ))}
+               </div>
+           </div>
+       </section>
+       
+       {/* Section 7: Community Voices */}
+        <section>
+            <h3 className="text-2xl font-bold text-rupivo-dark mb-10 text-center">Community Voices</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-orange-50 p-8 rounded-[2.5rem] relative hover:-translate-y-1 transition-transform">
+                    <Quote className="text-orange-200 w-16 h-16 absolute top-8 right-8" />
+                    <p className="text-lg font-medium text-gray-800 italic mb-6 relative z-10">"I never thought reading a finance blog could be this interesting. The article on 'Debt Snowball' literally saved me ₹20k in interest."</p>
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-white rounded-full p-1 shadow-sm">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Reader1" alt="Reader" className="rounded-full" />
+                        </div>
+                        <div>
+                            <p className="font-bold text-rupivo-dark">Sarah J.</p>
+                            <p className="text-xs text-gray-500 uppercase font-bold">Regular Reader</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="bg-blue-50 p-8 rounded-[2.5rem] relative hover:-translate-y-1 transition-transform">
+                    <Quote className="text-blue-200 w-16 h-16 absolute top-8 right-8" />
+                    <p className="text-lg font-medium text-gray-800 italic mb-6 relative z-10">"The FinShorts section is my daily morning routine now. It keeps me updated without boring me with jargon."</p>
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-white rounded-full p-1 shadow-sm">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Reader2" alt="Reader" className="rounded-full" />
+                        </div>
+                        <div>
+                            <p className="font-bold text-rupivo-dark">Mike T.</p>
+                            <p className="text-xs text-gray-500 uppercase font-bold">Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       {/* Section 8: Newsletter (Updated) */}
+       <section className="bg-gradient-to-br from-rupivo-blue to-blue-900 rounded-[3rem] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+           <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-400/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+           
+           <div className="relative z-10 max-w-2xl mx-auto">
+               <div className="inline-block p-4 bg-white/10 rounded-2xl mb-6 backdrop-blur-md">
+                   <MailOpen size={32} className="text-yellow-400" />
+               </div>
+               <h3 className="text-4xl font-extrabold mb-4">Money wisdom, delivered.</h3>
+               <p className="text-blue-100 mb-10 text-lg">Join 50,000+ smart Indians who get our weekly financial roundup. No fluff, just value.</p>
+               
+               <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+                   <input type="email" placeholder="Enter your email address" className="flex-1 px-6 py-4 rounded-2xl border border-white/20 bg-white/10 text-white placeholder:text-blue-200 focus:bg-white/20 outline-none backdrop-blur-sm transition-all" />
+                   <Button className="rounded-2xl px-8 h-auto py-4 bg-white text-rupivo-blue hover:bg-blue-50 font-bold text-lg shadow-xl">Subscribe Free</Button>
                </form>
-               <p className="text-xs text-gray-400 mt-6">No spam, ever. Unsubscribe anytime.</p>
+               <div className="flex items-center justify-center gap-6 mt-8 text-sm text-blue-200 font-medium">
+                   <span className="flex items-center gap-2"><CheckCircle2 size={16} /> Weekly updates</span>
+                   <span className="flex items-center gap-2"><CheckCircle2 size={16} /> Exclusive guides</span>
+                   <span className="flex items-center gap-2"><CheckCircle2 size={16} /> Unsubscribe anytime</span>
+               </div>
+           </div>
+       </section>
+
+       {/* Section 9: Categories Footer */}
+       <section className="border-t border-gray-100 pt-10">
+           <div className="flex flex-wrap justify-center gap-8 text-sm font-bold text-gray-500 uppercase tracking-widest">
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Credit</a>
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Loans</a>
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Insurance</a>
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Investments</a>
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Calculators</a>
+               <a href="#" className="hover:text-rupivo-blue transition-colors">Glossary</a>
            </div>
        </section>
     </div>

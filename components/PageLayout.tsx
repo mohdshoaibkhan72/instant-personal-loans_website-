@@ -4,9 +4,15 @@ interface PageLayoutProps {
   title: string;
   subtitle?: string;
   children: React.ReactNode;
+  maxWidth?: string;
 }
 
-export const PageLayout: React.FC<PageLayoutProps> = ({ title, subtitle, children }) => {
+export const PageLayout: React.FC<PageLayoutProps> = ({ 
+  title, 
+  subtitle, 
+  children,
+  maxWidth = "max-w-4xl" 
+}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,10 +33,16 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ title, subtitle, childre
       </div>
 
       {/* Content Section */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="prose prose-lg prose-blue max-w-none text-gray-600">
-          {children}
-        </div>
+      <div className={`${maxWidth} mx-auto px-4 sm:px-6 lg:px-8 py-16`}>
+        {maxWidth === "max-w-4xl" ? (
+          <div className="prose prose-lg prose-blue max-w-none text-gray-600">
+            {children}
+          </div>
+        ) : (
+          <div className="w-full text-gray-600">
+            {children}
+          </div>
+        )}
       </div>
     </div>
   );

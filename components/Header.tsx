@@ -68,13 +68,25 @@ export const Header: React.FC = () => {
             
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-10">
-              <button onClick={() => handleNavClick('how-it-works')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
+              <button 
+                onClick={() => handleNavClick('how-it-works')} 
+                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
+                aria-label="Scroll to How it Works section"
+              >
                 How it Works
               </button>
-              <button onClick={() => handleNavClick('eligibility')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
+              <button 
+                onClick={() => handleNavClick('eligibility')} 
+                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
+                aria-label="Scroll to Eligibility section"
+              >
                 Eligibility
               </button>
-              <button onClick={() => handleNavClick('support')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
+              <button 
+                onClick={() => handleNavClick('support')} 
+                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
+                aria-label="Scroll to Support section"
+              >
                 Support
               </button>
               <Link to="/signin" className="bg-rupivo-dark/5 text-rupivo-dark px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-rupivo-dark/10 transition-all">
@@ -87,6 +99,7 @@ export const Header: React.FC = () => {
                <button 
                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                  className="p-2 text-rupivo-dark hover:bg-gray-100 rounded-lg transition-colors"
+                 aria-label="Toggle mobile menu"
                >
                   {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                </button>
