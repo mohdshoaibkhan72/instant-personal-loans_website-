@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../logo.png';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,89 +21,72 @@ export const Header: React.FC = () => {
   const handleNavClick = (id: string) => {
     setMobileMenuOpen(false);
     if (isHome) {
-       const element = document.getElementById(id);
-       if (element) {
-         const headerOffset = 80;
-         const elementPosition = element.getBoundingClientRect().top;
-         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-         window.scrollTo({
-           top: offsetPosition,
-           behavior: "smooth"
-         });
-       }
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     } else {
-       navigate('/');
-       setTimeout(() => {
-         const element = document.getElementById(id);
-         if (element) {
-           const headerOffset = 80;
-           const elementPosition = element.getBoundingClientRect().top;
-           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-           window.scrollTo({
-             top: offsetPosition,
-             behavior: "smooth"
-           });
-         }
-       }, 300);
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 300);
     }
   };
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || mobileMenuOpen || !isHome
-            ? 'bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-sm' 
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || mobileMenuOpen || !isHome
+            ? 'bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-sm'
             : 'bg-transparent border-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 z-50" onClick={() => window.scrollTo(0, 0)}>
-              <div className="w-10 h-10 bg-gradient-to-br from-rupivo-blue to-rupivo-lightBlue rounded-xl flex items-center justify-center shadow-lg shadow-rupivo-blue/20">
-                <span className="text-white font-extrabold text-xl font-sans">R</span>
-              </div>
-              <span className="text-2xl font-bold text-rupivo-dark tracking-tight font-sans">RUPIVO</span>
+              <img src={logo} alt="RUPIVO" className="h-12 w-auto object-contain" />
             </Link>
-            
+
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-10">
-              <button 
-                onClick={() => handleNavClick('how-it-works')} 
-                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
-                aria-label="Scroll to How it Works section"
-              >
+              <button onClick={() => handleNavClick('how-it-works')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
                 How it Works
               </button>
-              <button 
-                onClick={() => handleNavClick('eligibility')} 
-                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
-                aria-label="Scroll to Eligibility section"
-              >
+              <button onClick={() => handleNavClick('eligibility')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
                 Eligibility
               </button>
-              <button 
-                onClick={() => handleNavClick('support')} 
-                className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide"
-                aria-label="Scroll to Support section"
-              >
+              <button onClick={() => handleNavClick('support')} className="text-gray-600 hover:text-rupivo-blue font-semibold transition-colors text-sm tracking-wide">
                 Support
               </button>
               <Link to="/signin" className="bg-rupivo-dark/5 text-rupivo-dark px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-rupivo-dark/10 transition-all">
-                  Sign In
+                Sign In
               </Link>
             </nav>
 
             {/* Mobile Toggle */}
             <div className="flex items-center md:hidden z-50">
-               <button 
-                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                 className="p-2 text-rupivo-dark hover:bg-gray-100 rounded-lg transition-colors"
-                 aria-label="Toggle mobile menu"
-               >
-                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-               </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-rupivo-dark hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
           </div>
         </div>

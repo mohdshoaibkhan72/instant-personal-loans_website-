@@ -3,23 +3,10 @@ import {
   CheckCircle2, Smartphone, TrendingUp, Users, 
   Calculator, BadgeIndianRupee, Star, ShieldCheck, 
   Gift, Zap, Lock, Briefcase, Plane, Quote, 
-  Bell, Clock, Trophy, Target, Server, LayoutDashboard, ArrowRight, Menu
+  Bell, Clock, Trophy, Target, Server, LayoutDashboard
 } from 'lucide-react';
 import { Button } from '../Button';
 import { ButtonVariant } from '../../types';
-
-// Icons for App Stores
-const PlayStoreIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 512 512" className={className} fill="currentColor">
-    <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
-  </svg>
-);
-
-const AppleIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 384 512" className={className} fill="currentColor">
-    <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/>
-  </svg>
-);
 
 export const ReferralPartner: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState(500000);
@@ -96,27 +83,6 @@ export const ReferralPartner: React.FC = () => {
         earnings: "₹95,000/mo",
         text: "The dedicated relationship manager support is what sets Rupivo apart. Any issue with a case is resolved within hours, keeping my clients happy.", 
         img: "Meera" 
-    },
-    {
-        name: "Suresh Patil",
-        role: "Shop Owner, Pune",
-        earnings: "₹55,000/mo",
-        text: "I run an electronics shop. Using Rupivo, I offer instant loans to my customers who want to buy on EMI. My sales increased and I earn commission too!",
-        img: "Suresh"
-    },
-    {
-        name: "Priya Nair",
-        role: "Homemaker",
-        earnings: "₹32,000/mo",
-        text: "I was looking for work-from-home options. Becoming a Rupivo partner was the best decision. I refer loans to friends and family in my free time.",
-        img: "Priya"
-    },
-    {
-        name: "Rohan Das",
-        role: "Tax Consultant",
-        earnings: "₹1.8 Lakhs/mo",
-        text: "My clients often ask for business loans during tax filing season. Rupivo allows me to help them instantly while adding a significant revenue stream.",
-        img: "Rohan"
     }
   ];
 
@@ -269,202 +235,32 @@ export const ReferralPartner: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. APP SHOWCASE */}
-      <section className="py-24 lg:py-32 bg-rupivo-bg relative overflow-hidden">
+      {/* 3. HOW IT WORKS */}
+      <section className="py-24 lg:py-32 bg-rupivo-bg relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                
-                {/* Left: Content */}
-                <div>
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-rupivo-blue text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 animate-fade-in-up">
-                        <Smartphone size={14} /> Partner App
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-rupivo-dark mb-6 leading-tight">
-                        Your Entire Business <br/>
-                        <span className="text-rupivo-blue">In Your Pocket.</span>
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                        The Rupivo Partner App gives you the power to onboard customers, track applications, and withdraw earnings—anytime, anywhere.
-                    </p>
-
-                    <div className="space-y-8 mb-10">
-                        <div className="flex gap-4">
-                            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0 text-rupivo-blue">
-                                <Target className="w-6 h-6" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-lg text-rupivo-dark">Real-Time Lead Tracking</h4>
-                                <p className="text-sm text-gray-500">See exactly when your customer's loan gets approved and disbursed.</p>
-                            </div>
+            <div className="text-center mb-20">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-rupivo-dark mb-4">Start Earning in 3 Steps</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">No paperwork. 100% digital onboarding process. <br/>You can start referring leads in less than 5 minutes.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                 {/* Desktop Connector Line */}
+                 <div className="hidden md:block absolute top-16 left-[16%] right-[16%] h-0.5 border-t-2 border-dashed border-gray-300 -z-10 opacity-60"></div>
+                 
+                 {[
+                     { num: 1, icon: Users, title: "Register", desc: "Sign up on the app with your basic details & KYC." },
+                     { num: 2, icon: Smartphone, title: "Add Leads", desc: "Enter customer details or share your referral link." },
+                     { num: 3, icon: BadgeIndianRupee, title: "Get Paid", desc: "Receive commission directly in your bank account." }
+                 ].map((step, i) => (
+                     <div key={i} className="group flex flex-col items-center text-center p-8 bg-white rounded-[2.5rem] border border-gray-100 shadow-soft hover:shadow-soft-hover transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-24 h-24 rounded-3xl bg-white shadow-card flex items-center justify-center mb-8 relative border border-gray-50 group-hover:border-blue-100 transition-colors">
+                            <step.icon className="w-10 h-10 text-rupivo-blue group-hover:scale-110 transition-transform duration-300" />
+                            <div className="absolute -top-4 -right-4 w-10 h-10 rounded-xl bg-rupivo-blue text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-rupivo-blue/20 rotate-12 group-hover:rotate-0 transition-all">{step.num}</div>
                         </div>
-                        <div className="flex gap-4">
-                            <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0 text-green-600">
-                                <BadgeIndianRupee className="w-6 h-6" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-lg text-rupivo-dark">Earnings Dashboard</h4>
-                                <p className="text-sm text-gray-500">Track your daily commissions and withdraw funds instantly.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-4">
-                         {/* Google Play Button - Enhanced */}
-                         <button className="flex items-center gap-3 bg-rupivo-dark text-white px-5 py-3 rounded-2xl hover:bg-gray-800 transition-all shadow-lg shadow-gray-900/20 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto min-w-[200px] border border-transparent group h-[60px]">
-                            <PlayStoreIcon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
-                            <div className="text-left flex flex-col justify-center">
-                                <div className="text-[10px] font-bold uppercase tracking-wider opacity-80 leading-none mb-1">Get it on</div>
-                                <div className="text-xl font-bold leading-none font-sans">Google Play</div>
-                            </div>
-                         </button>
-                         
-                         {/* App Store Button - Enhanced */}
-                         <button className="flex items-center gap-3 bg-black text-white px-5 py-3 rounded-2xl hover:bg-gray-900 transition-all shadow-lg shadow-gray-900/20 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto min-w-[200px] border border-white/10 group h-[60px]">
-                            <AppleIcon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
-                            <div className="text-left flex flex-col justify-center">
-                                <div className="text-[10px] font-bold uppercase tracking-wider opacity-80 leading-none mb-1">Download on the</div>
-                                <div className="text-xl font-bold leading-none font-sans">App Store</div>
-                            </div>
-                         </button>
-                    </div>
-                </div>
-
-                {/* Right: Dual Phone Mockups */}
-                <div className="relative h-[650px] w-full hidden md:block">
-                    {/* Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-100/50 to-green-100/50 rounded-full blur-3xl"></div>
-                    
-                    {/* Phone 1: Background (Android - Lead Tracking) */}
-                    <div className="absolute top-0 right-10 w-[280px] h-[580px] bg-gray-900 rounded-[2.5rem] border-[8px] border-gray-900 shadow-2xl transform rotate-12 z-10 opacity-80 scale-95 origin-bottom-left hover:scale-100 hover:rotate-6 hover:z-30 transition-all duration-500 ease-out">
-                        <div className="w-full h-full bg-gray-50 rounded-[2rem] overflow-hidden flex flex-col relative">
-                            {/* Android Status Bar & Punch Hole */}
-                            <div className="h-8 bg-rupivo-dark text-white flex justify-between px-4 items-center text-[10px] font-medium z-20 relative">
-                                <span>10:30</span>
-                                <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-black rounded-full"></div>
-                                <div className="flex gap-1"><span>5G</span><span>100%</span></div>
-                            </div>
-
-                            {/* Header */}
-                            <div className="bg-rupivo-dark text-white p-6 pt-6">
-                                <h4 className="font-bold text-lg">My Leads</h4>
-                                <div className="flex gap-2 mt-4 text-xs font-bold overflow-x-hidden no-scrollbar">
-                                    <span className="bg-white text-rupivo-dark px-3 py-1 rounded-full whitespace-nowrap">All (45)</span>
-                                    <span className="bg-white/10 text-white px-3 py-1 rounded-full whitespace-nowrap">Pending</span>
-                                    <span className="bg-white/10 text-white px-3 py-1 rounded-full whitespace-nowrap">Approved</span>
-                                </div>
-                            </div>
-                            {/* List */}
-                            <div className="p-4 space-y-3 overflow-y-auto no-scrollbar pb-10">
-                                {[1,2,3,4,5,6].map(i => (
-                                    <div key={i} className="bg-white p-3 rounded-xl shadow-sm flex items-center justify-between border border-gray-50">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-500">
-                                                {String.fromCharCode(64+i)}
-                                            </div>
-                                            <div>
-                                                <p className="font-bold text-xs text-gray-800">Customer {i}</p>
-                                                <p className="text-[10px] text-gray-400">#29{i}39</p>
-                                            </div>
-                                        </div>
-                                        <span className={`text-[9px] font-bold px-2 py-1 rounded ${i%2===0 ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
-                                            {i%2===0 ? 'DISBURSED' : 'PENDING'}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                            {/* Android Nav Bar */}
-                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full"></div>
-                        </div>
-                    </div>
-
-                    {/* Phone 2: Foreground (iOS - Earnings) */}
-                    <div className="absolute bottom-10 left-10 w-[290px] h-[600px] bg-gray-900 rounded-[3.5rem] border-[10px] border-gray-900 shadow-2xl z-20 overflow-hidden ring-1 ring-gray-800 hover:scale-105 transition-transform duration-500">
-                         <div className="w-full h-full bg-white rounded-[3rem] overflow-hidden flex flex-col relative">
-                             
-                             {/* iOS Status Bar & Dynamic Island */}
-                             <div className="h-12 w-full flex justify-between px-6 items-center absolute top-0 z-30 pt-2">
-                                <span className="text-[10px] font-bold text-rupivo-dark">9:41</span>
-                                <div className="w-24 h-7 bg-black rounded-full flex items-center justify-center gap-3 px-3 shadow-sm">
-                                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                    <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
-                                </div>
-                                <div className="flex gap-1">
-                                    <div className="w-4 h-2.5 border border-gray-800 rounded-[2px]"></div>
-                                </div>
-                             </div>
-                             
-                             {/* App Header */}
-                             <div className="p-6 pt-16 bg-gray-50/50 pb-8">
-                                <div className="flex justify-between items-center mb-6">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul" alt="User"/>
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold text-gray-400 uppercase leading-none">Partner</p>
-                                            <p className="text-sm font-bold text-rupivo-dark leading-none">Rahul</p>
-                                        </div>
-                                    </div>
-                                    <Bell size={20} className="text-gray-400" />
-                                </div>
-                                <p className="text-gray-400 text-xs font-bold uppercase mb-1">Total Earnings</p>
-                                <h2 className="text-3xl font-extrabold text-rupivo-dark mb-2">₹ 45,250</h2>
-                                <p className="text-green-500 text-xs font-bold flex items-center gap-1"><TrendingUp size={12}/> +12.5% this week</p>
-                             </div>
-
-                             {/* Chart Area */}
-                             <div className="h-40 bg-white w-full relative px-2">
-                                  <svg viewBox="0 0 100 40" className="w-full h-full" preserveAspectRatio="none">
-                                      <path d="M0,35 Q10,30 20,32 T40,20 T60,25 T80,10 T100,15 V40 H0 Z" fill="url(#gradient)" />
-                                      <path d="M0,35 Q10,30 20,32 T40,20 T60,25 T80,10 T100,15" fill="none" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" />
-                                      <defs>
-                                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.2"/>
-                                            <stop offset="100%" stopColor="#3B82F6" stopOpacity="0"/>
-                                        </linearGradient>
-                                      </defs>
-                                  </svg>
-                             </div>
-
-                             {/* Actions */}
-                             <div className="p-4 grid grid-cols-2 gap-3 -mt-6 relative z-10">
-                                 <div className="bg-rupivo-dark text-white p-4 rounded-2xl text-center shadow-lg shadow-gray-900/10 hover:scale-105 transition-transform cursor-pointer">
-                                     <ArrowRight className="w-5 h-5 mx-auto mb-2 -rotate-45" />
-                                     <p className="text-xs font-bold">Withdraw</p>
-                                 </div>
-                                 <div className="bg-white text-gray-600 p-4 rounded-2xl text-center border border-gray-100 shadow-sm hover:scale-105 transition-transform cursor-pointer">
-                                     <Smartphone className="w-5 h-5 mx-auto mb-2 text-rupivo-blue" />
-                                     <p className="text-xs font-bold">History</p>
-                                 </div>
-                             </div>
-
-                             {/* Recent Activity List */}
-                             <div className="px-4 pb-4 flex-grow overflow-hidden">
-                                 <p className="text-xs font-bold text-gray-400 uppercase mb-3 ml-1">Recent Payouts</p>
-                                 <div className="space-y-2">
-                                     <div className="flex justify-between items-center p-3 rounded-xl bg-gray-50">
-                                         <div className="flex items-center gap-3">
-                                             <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600"><ArrowRight size={14} className="-rotate-45"/></div>
-                                             <div><p className="text-xs font-bold text-gray-800">Withdrawal</p><p className="text-[9px] text-gray-400">Tue, 12 Mar</p></div>
-                                         </div>
-                                         <p className="text-xs font-bold text-gray-800">- ₹5,000</p>
-                                     </div>
-                                     <div className="flex justify-between items-center p-3 rounded-xl bg-gray-50">
-                                         <div className="flex items-center gap-3">
-                                             <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-rupivo-blue"><BadgeIndianRupee size={14}/></div>
-                                             <div><p className="text-xs font-bold text-gray-800">Commission</p><p className="text-[9px] text-gray-400">Mon, 11 Mar</p></div>
-                                         </div>
-                                         <p className="text-xs font-bold text-green-600">+ ₹1,200</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             
-                             {/* iOS Home Indicator */}
-                             <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-black rounded-full"></div>
-                         </div>
-                    </div>
-                </div>
-
+                        <h3 className="text-xl font-bold text-rupivo-dark mb-3">{step.title}</h3>
+                        <p className="text-gray-500 leading-relaxed font-medium">{step.desc}</p>
+                     </div>
+                 ))}
             </div>
         </div>
       </section>
@@ -718,17 +514,6 @@ export const ReferralPartner: React.FC = () => {
                         </div>
                     </div>
                 ))}
-            </div>
-
-            {/* CTA Button */}
-            <div className="mt-20 text-center">
-                <Button 
-                    onClick={scrollToRegister} 
-                    className="h-16 px-12 text-lg rounded-full shadow-lg shadow-rupivo-blue/30 hover:shadow-xl hover:shadow-rupivo-blue/40 transform hover:-translate-y-1 transition-all"
-                    icon={<ArrowRight size={24} />}
-                >
-                    Start Your Partner Journey
-                </Button>
             </div>
          </div>
       </section>
